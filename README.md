@@ -1,1 +1,1 @@
-# gRPC-and-ASP.NET-Core
+# gRPC and ASP.NET Core
