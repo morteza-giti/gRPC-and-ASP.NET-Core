@@ -1,4 +1,4 @@
-# gRPC Airline Case Study
+# gRPC and ASP.NET Core Tutorial
 
 A practical, production-minded tutorial series.
 
@@ -6,5 +6,5 @@ A practical, production-minded tutorial series.
 1. [Episode 1 — Project setup & domain modeling](./episode-1)
 2. [Episode 2 — Unary gRPC calls](./episode-2)
 
-💎 **Want the full solution files?**  
+**Want the full solution files?**  
 Get instant access here → **(link later)**
