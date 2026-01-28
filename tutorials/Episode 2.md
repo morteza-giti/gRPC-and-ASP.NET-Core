@@ -1,5 +1,3 @@
-# Episode 2 — Contracts & Versioning
-
 Create a branch called `episode-2` based on the `episode-1` branch.
 
 Alright, let’s shift gears a bit and zoom in on Episode 2 from a different angle. This time, we’re not talking about flight status or real-time updates. We’re talking about bookings, and more importantly, we’re talking about contracts and versioning in gRPC, which is one of those topics that looks boring at first… right up until it saves you from breaking production clients.
@@ -679,4 +677,5 @@ Write-Host "Close each window when you're done." -ForegroundColor Cyan
 When you run this script, you’ll see three windows open. One for the API, one for the Flight Directory client, and one for the Booking Service client. You can watch the API logs while both clients make calls, which really drives home the idea that gRPC services are just strongly typed endpoints living side by side on the same host.
 
 And that brings Episode 2 to a clean close. If this episode helped you understand why contracts and versioning matter in gRPC, go ahead and like the video—it really helps the channel. Don’t forget to subscribe to *A Coder’s Journey* so you don’t miss the next episodes, where we’ll keep building on this foundation. And if you want to explore the code yourself, grab the full solution from the link in the video description.
+
 
