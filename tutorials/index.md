@@ -1,4 +1,3 @@
-## Episodes
 1. [Episode 1 — Project setup & domain modeling](./episode-1)
 2. [Episode 2 — Unary gRPC calls](./episode-2)
 
