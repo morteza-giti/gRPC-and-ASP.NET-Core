@@ -1,5 +1,3 @@
-# Episode 1 — gRPC Fundamentals in ASP.NET Core
-
 Create a branch called `episode-1` based on the `master` branch.
 
 Welcome to Episode 1 of this gRPC series. In this episode, we’re laying the foundation. By the end of this video, you’ll understand why gRPC exists in the first place, when it actually makes sense to use it, how proto-first contracts work, and how all of this fits naturally into an ASP.NET Core application. We’ll also set the stage for building a real unary gRPC service and calling it from a .NET client, but first, we need to get the “why” straight.
@@ -529,4 +527,5 @@ To run the demo, navigate to the solution folder in PowerShell and execute:
 You’ll see a new PowerShell window pop up for the API, you’ll see the client output in the original window, and you can watch the logs on both sides to understand exactly what’s happening.
 
 And that brings us to the end of this episode. If you enjoyed this walkthrough and it helped gRPC finally click for you, go ahead and like the video, it really helps the channel. Don’t forget to subscribe to *A Coder’s Journey* so you don’t miss the next episodes in this gRPC tutorial series. In the upcoming videos, we’ll build on this foundation and go deeper into real-world patterns. And if you want to play with the code yourself, grab the full solution from the link in the video description.
+
 
