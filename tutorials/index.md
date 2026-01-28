@@ -1,7 +1,3 @@
-# gRPC and ASP.NET Core Tutorial
-
-A practical, production-minded tutorial series.
-
 ## Episodes
 1. [Episode 1 — Project setup & domain modeling](./episode-1)
 2. [Episode 2 — Unary gRPC calls](./episode-2)
