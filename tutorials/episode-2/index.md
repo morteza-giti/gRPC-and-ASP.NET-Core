@@ -88,14 +88,14 @@ You already have `Airline.FlightDirectory.Contracts`, which is great. But for Ep
 In that project’s `.csproj`, we add the protobuf and gRPC tooling plus the `Protobuf` item so `booking.proto` gets compiled and generates code.
 
 ```xml
-	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.25.3" />
-		<PackageReference Include="Grpc.Tools" Version="2.76.0" PrivateAssets="All" />
-		<PackageReference Include="Grpc.Core.Api" Version="2.76.0" />
-	</ItemGroup>
-	<ItemGroup>
-		<Protobuf Include="booking.proto" GrpcServices="Both" />
-	</ItemGroup>
+<ItemGroup>
+	<PackageReference Include="Google.Protobuf" Version="3.25.3" />
+	<PackageReference Include="Grpc.Tools" Version="2.76.0" PrivateAssets="All" />
+	<PackageReference Include="Grpc.Core.Api" Version="2.76.0" />
+</ItemGroup>
+<ItemGroup>
+	<Protobuf Include="booking.proto" GrpcServices="Both" />
+</ItemGroup>
 ```
 
 The important “tiny detail that matters” here is the proto filename. We’re explicitly calling it `booking.proto`, and we’re telling MSBuild to generate both server and client code from it with `GrpcServices="Both"`. This is what makes the `.proto` become real C# classes and a real generated client later.
@@ -252,7 +252,7 @@ So in plain terms, the contract defines what data looks like, and the server dec
 
 ---
 
-# 8) Server: BookingGrpcService (Unary)
+# Server: BookingGrpcService (Unary)
 
 Add the following service implementation to `Airline.Booking.Api/Services/BookingGrpcService.cs`
 
@@ -371,7 +371,7 @@ public class BookingGrpcService : BookingService.BookingServiceBase
 
 ---
 
-# 9) Mapping: Domain ↔ Proto (clean and explicit)
+# Mapping: Domain ↔ Proto (clean and explicit)
 
 Add the following mappings to `Airline.Booking.Api/Mappings/BookingMappings.cs`
 
@@ -677,6 +677,3 @@ Write-Host "Close each window when you're done." -ForegroundColor Cyan
 When you run this script, you’ll see three windows open. One for the API, one for the Flight Directory client, and one for the Booking Service client. You can watch the API logs while both clients make calls, which really drives home the idea that gRPC services are just strongly typed endpoints living side by side on the same host.
 
 And that brings Episode 2 to a clean close. If this episode helped you understand why contracts and versioning matter in gRPC, go ahead and like the video—it really helps the channel. Don’t forget to subscribe to *A Coder’s Journey* so you don’t miss the next episodes, where we’ll keep building on this foundation. And if you want to explore the code yourself, grab the full solution from the link in the video description.
-
-
-
