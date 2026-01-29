@@ -168,8 +168,7 @@ Now we move to Step 3, building the ASP.NET Core gRPC server. This happens in th
 To host gRPC in ASP.NET Core, we install the gRPC server package in the API project.
 
 ```bash
-    <PackageReference Include="Grpc.AspNetCore" Version="2.76.0" />
-
+<PackageReference Include="Grpc.AspNetCore" Version="2.76.0" />
 ```
 
 Even though it’s wrapped in a “bash” code block in the note, what this really represents is a package reference that belongs in the API project’s `.csproj`. This package is what allows ASP.NET Core to actually host gRPC endpoints. Without it, you can still write service classes, but nothing will be listening for gRPC calls.
@@ -177,10 +176,10 @@ Even though it’s wrapped in a “bash” code block in the note, what this rea
 And since the API project needs to both implement the service contract and work with domain models, it must reference both the Contracts and Domain projects.
 
 ```
-  <ItemGroup>
-    <ProjectReference Include="..\Airline.FlightDirectory.Contracts\Airline.FlightDirectory.Contracts.csproj" />
-    <ProjectReference Include="..\Airline.FlightDirectory.Domain\Airline.FlightDirectory.Domain.csproj" />
-  </ItemGroup>
+<ItemGroup>
+	<ProjectReference Include="..\Airline.FlightDirectory.Contracts\Airline.FlightDirectory.Contracts.csproj" />
+	<ProjectReference Include="..\Airline.FlightDirectory.Domain\Airline.FlightDirectory.Domain.csproj" />
+</ItemGroup>
 ```
 
 This is one of those small lines that quietly makes everything possible. The Contracts project gives the API access to the generated protobuf types like `FlightDto`, `GetFlightRequest`, and the generated base class for the service. The Domain project gives the API access to the “real” models like `Flight`, `Airport`, and `Aircraft`. The API sits in the middle and translates between them.
@@ -285,7 +284,6 @@ Then we map the matching domain flights to DTOs using `.Select(f => f.ToDto())`.
 
 So stepping back, here’s the big picture. The class inherits from a generated base class, each RPC method becomes an override, `RpcException` is how you communicate errors instead of HTTP responses, and these methods behave like normal method calls rather than MVC controller actions. That’s why gRPC feels so clean for internal service-to-service communication. It’s not about endpoints and controllers. It’s about strongly typed method calls across the network.
 
-
 ---
 
 Alright, now we’re getting to the part that makes the whole thing feel clean and “grown-up,” even though it’s a small demo. We’ve got domain models that are pure C#, we’ve got protobuf DTOs generated from the `.proto` file, and now we need a clear, explicit bridge between the two. That’s Step 5: mapping domain to proto.
@@ -388,9 +386,9 @@ Here’s the role each one plays. `Grpc.Net.Client` is the actual gRPC client li
 Then we add a reference to the Contracts project, because the console app needs the generated client type and the request and response message classes.
 
 ```
-	<ItemGroup>
-	  <ProjectReference Include="..\Airline.FlightDirectory.Contracts\Airline.FlightDirectory.Contracts.csproj" />
-	</ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="..\Airline.FlightDirectory.Contracts\Airline.FlightDirectory.Contracts.csproj" />
+</ItemGroup>
 ```
 
 Now we can write the client code in the console app’s `Program.cs`. This is the part that usually makes people smile, because it looks like calling a normal C# service, even though it’s happening over the network.
