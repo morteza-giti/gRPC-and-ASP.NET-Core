@@ -528,3 +528,5 @@ You’ll see a new PowerShell window pop up for the API, you’ll see the client
 
 And that brings us to the end of this episode. If you enjoyed this walkthrough and it helped gRPC finally click for you, go ahead and like the video, it really helps the channel. Don’t forget to subscribe to *A Coder’s Journey* so you don’t miss the next episodes in this gRPC tutorial series. In the upcoming videos, we’ll build on this foundation and go deeper into real-world patterns. And if you want to play with the code yourself, grab the full solution from the link in the video description.
 
+
+
